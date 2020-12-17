@@ -4,7 +4,7 @@
 
 ![Trees](./trees.png)
 
-There are a number of different ways to traverse a tree, or in other words, travel down a tree from its root node all the way through to its leaf nodes or to a target node. Today we'll be focusing on a type of traversal called level-order or breadth-first tree traversal, which can be used with any type of tree data structure.
+There are a number of different ways to traverse a tree, or in other words, travel down a tree from its root node all the way through to its leaf nodes or to a target node. Today we'll be focusing on a type of traversal called level-order or breadth-first tree traversal, which can be used with any type of tree data structure. Typically, it is solved iteratively.
 
 ## What is level-order tree traversal?
 
@@ -45,8 +45,6 @@ level_order_traversal(root)
 level_order_traversal(root)
 => [[10], [20, 30], [9, 22]]
 ```
-
-Note that this challenge can be completed iteratively or recursively at roughly the same difficulty level.
 
 Use the language of your choosing. We've included starter files for some languages where you can pseudocode, explain your solution and code.
 
