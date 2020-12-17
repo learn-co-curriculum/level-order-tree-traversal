@@ -4,7 +4,7 @@
 
 ![Trees](./trees.png)
 
-There are a number of different ways to traverse a tree, or in other words, travel down a tree from its root node all the way through to its leaf nodes or to a target node. Today we'll be focusing on a type of traversal called level-order or breadth-first tree traversal, which can be used with any type of tree data structure. Typically, it is solved iteratively.
+There are a number of different ways to traverse a tree, or in other words, travel down a tree from its root node all the way through to its leaf nodes or to a target node. Today we'll be focusing on a type of traversal called level-order or breadth-first tree traversal, which can be used with any type of tree data structure. Typically, it is implemented iteratively.
 
 ## What is level-order tree traversal?
 
