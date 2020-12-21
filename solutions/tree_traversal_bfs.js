@@ -78,4 +78,31 @@ if (require.main === module) {
 module.exports = levelOrderTraversal;
 
 // Please add your pseudocode to this file
+/****************************************************************************************** */
+// if root is nil: return empty array
+// else: initialize a queue with the root
+// initialize an empty array to store result
+//
+// loop until the queue is empty:
+//   initialize empty array to hold numbers for current layer
+//   initialize empty array to hold nodes for processing on next iteration
+//
+//   iterate over queue:
+//     push node value onto numbers array
+//     push each node's left and right nodes onto node array unless null/nil
+//
+//   set queue to node array
+//
+// return result
+/****************************************************************************************** */
+
 // And a written explanation of your solution
+/****************************************************************************************** */
+// We can solve this problem by using a queue. Each time we process a node, we puts its left
+// and right nodes into the queue for future processing. So starting at the root, we put it
+// in the queue. We iterate over the queue: each numerical value is placed in an array, which 
+// will be pushed onto the result array (which will be returned) after the iteration. We can
+// also push each node's left and right nodes onto another array. This array will then be
+// stored as the queue, so it can be processed on the next iteration. This ensures that we 
+// process each layer of the tree from left to right, one layer at a time.
+/****************************************************************************************** */
