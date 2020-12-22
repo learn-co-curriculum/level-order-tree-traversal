@@ -24,7 +24,10 @@ if (require.main === module) {
   console.log(levelOrderTraversal(root));
 }
 
-module.exports = levelOrderTraversal;
+module.exports = {
+  Node,
+  levelOrderTraversal
+};
 
 // Please add your pseudocode to this file
 // And a written explanation of your solution
