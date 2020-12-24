@@ -32,7 +32,7 @@ For this challenge, we're going to write a method that takes the root node of a 
  2     3
 
 level_order_traversal(root)
-=> [[1], [2, 3]]
+=> [1, 2, 3]
 ```
 
 ```
@@ -43,7 +43,7 @@ level_order_traversal(root)
   9   22
 
 level_order_traversal(root)
-=> [[10], [20, 30], [9, 22]]
+=> [10, 20, 30, 9, 22]
 ```
 
 Use the language of your choosing. We've included starter files for some languages where you can pseudocode, explain your solution and code.

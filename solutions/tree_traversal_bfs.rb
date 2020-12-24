@@ -13,28 +13,21 @@ def level_order_traversal(root)
   result = []
 
   while queue.length > 0
-    nodeLayer = []
-    numbers = []
+    node = queue.shift
 
-    queue.each do |node|
-      numbers << node.value
-
-      nodeLayer.push(node.left) unless node.left.nil?
-      nodeLayer.push(node.right) unless node.right.nil?
-    end
-
-    result << numbers
-    queue = nodeLayer
+    result << node
+    queue << node.left unless node.left.nil?
+    queue << node.right unless node.right.nil?
   end
 
-  result
+  result.map { |node| node.value }
 end
 
 
 if __FILE__ == $PROGRAM_NAME
   root = Node.new(1, Node.new(2), Node.new(3));
 
-  puts "Expecting: [[1], [2, 3]]"
+  puts "Expecting: [1, 2, 3]"
   print level_order_traversal(root)
 
   puts
@@ -42,7 +35,7 @@ if __FILE__ == $PROGRAM_NAME
 
   root = Node.new(10, Node.new(20, Node.new(9), Node.new(22)), Node.new(30))
 
-  puts "Expecting: [[10], [20, 30], [9, 22]]"
+  puts "Expecting: [10, 20, 30, 9, 22]"
   print level_order_traversal(root)
 
   # Don't forget to add your own!
@@ -59,7 +52,7 @@ if __FILE__ == $PROGRAM_NAME
 
   root = Node.new(10)
 
-  puts "Expecting: [[10]]"
+  puts "Expecting: [10]"
   print level_order_traversal(root)
 
   puts
@@ -67,7 +60,7 @@ if __FILE__ == $PROGRAM_NAME
 
   root = Node.new(10, Node.new(9, Node.new(8, Node.new(7, Node.new(32)), Node.new(6, nil, Node.new(33))), Node.new(12, Node.new(11), Node.new(40))), Node.new(11, Node.new(20, Node.new(4), Node.new(90)), Node.new(30, Node.new(9), Node.new(89, nil, Node.new(90, nil, Node.new(34))))))
 
-  puts "Expecting: [[10], [9, 11], [8, 12, 20, 30], [7, 6, 11, 40, 4, 90, 9, 89], [32, 33, 90], [34]]"
+  puts "Expecting: [10, 9, 11, 8, 12, 20, 30, 7, 6, 11, 40, 4, 90, 9, 89, 32, 33, 90, 34]"
   print level_order_traversal(root)
 
   puts
@@ -75,38 +68,32 @@ if __FILE__ == $PROGRAM_NAME
 
   root = Node.new(10, nil, Node.new(11, nil, Node.new(12, nil, Node.new(12))))
 
-  puts "Expecting: [[10], [11], [12], [12]]"
+  puts "Expecting: [10, 11, 12, 12]"
   print level_order_traversal(root)
 
   puts
 end
 
 # Please add your pseudocode to this file
-############################################################################################
+##############################################################################################
 # if root is nil: return empty array
 # else: initialize a queue with the root
 # initialize an empty array to store result
 #
 # loop until the queue is empty:
-#   initialize empty array to hold numbers for current layer
-#   initialize empty array to hold nodes for processing on next iteration
-#
-#   iterate over queue:
-#     push node value onto numbers array
-#     push each node's left and right nodes onto node array unless null/nil
-#
-#   set queue to node array
+#   store first node in queue in variable node
+#   add node to result array
+#   add node's left and right nodes to queue if not falsy, in that order  
 #
 # return result
-############################################################################################
+##############################################################################################
 
 # And a written explanation of your solution
-############################################################################################
+##############################################################################################
 # We can solve this problem by using a queue. Each time we process a node, we puts its left
 # and right nodes into the queue for future processing. So starting at the root, we put it
-# in the queue. We iterate over the queue: each numerical value is placed in an array, which 
-# will be pushed onto the result array (which will be returned) after the iteration. We can
-# also push each node's left and right nodes onto another array. This array will then be
-# stored as the queue, so it can be processed on the next iteration. This ensures that we 
-# process each layer of the tree from left to right, one layer at a time.
-############################################################################################
+# in the queue. We iterate over the queue: the node is added to a result array. If the node
+# being processed has a left and/or right node, those are pushed onto the queue. We continue
+# until the queue is empty. To return the values associated with the nodes in the result, we
+# use map to return an array containing the values in the correct order.
+##############################################################################################
