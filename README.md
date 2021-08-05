@@ -2,7 +2,7 @@
 
 **Fork and then clone me!**
 
-![Trees](./trees.png)
+![Trees](https://curriculum-content.s3.amazonaws.com/data-structures-and-algorithms/level-order-tree-traversal/trees.png)
 
 There are a number of different ways to traverse a tree, or in other words, travel down a tree from its root node all the way through to its leaf nodes or to a target node. Today we'll be focusing on a type of traversal called level-order or breadth-first tree traversal, which can be used with any type of tree data structure. Typically, it is implemented iteratively.
 
@@ -16,7 +16,7 @@ Take a moment to look at the trees at the top of this README. If we were to perf
 
 Let's say we had our data stored in a tree, but it wasn't a binary search tree (a BST requires its nodes to be ordered). In this tree the values of our nodes can be stored in any order:
 
-![Trees](./unordered_tree.png)
+![Trees](https://curriculum-content.s3.amazonaws.com/data-structures-and-algorithms/level-order-tree-traversal/unordered_tree.png)
 
 Now, let's say we want to find the shortest path to the node with a value of 30. That node could be anywhere! On the left side or the right side. If we do a level-order traversal (breadth-first search aka BFS), we can stop searching once we reach the correct depth. In contrast, if we were to go all the way down one path, before coming back up to the root and going down a different path, we could end up going much further down the tree than we need to.
 
